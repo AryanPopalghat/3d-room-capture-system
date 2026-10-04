@@ -4,7 +4,7 @@
 
 ## The Failing Run
 
-While testing the pipeline on the `single_room` dataset, we noticed anomalous output in the JSON file for the ceiling height:
+While testing the pipeline on the `single_room` dataset, I noticed anomalous output in the JSON file for the ceiling height:
 
 ```json
 "ceiling_height": {
@@ -19,7 +19,8 @@ A ceiling height of 0.75m (approx. 2.5 feet) is impossible for a standard reside
 
 ## Diagnosis
 
-We inspected the plane classification logs:
+I inspected the plane classification logs:
+
 ```
 Plane classification:
   Floor: 30,765 points at Y=-1.48m
@@ -27,6 +28,7 @@ Plane classification:
 ```
 
 The iPhone LiDAR coordinate system (ARKit) uses a Y-up convention where the camera starts at roughly Y=0.
+
 - `Y = -1.48m` corresponds to the floor (meaning the camera was held ~1.5m above the ground, which is normal chest height).
 - `Y = -0.73m` corresponds to a horizontal surface roughly 0.75m above the floor.
 
@@ -34,7 +36,7 @@ The iPhone LiDAR coordinate system (ARKit) uses a Y-up convention where the came
 
 ## The Fix
 
-We updated `src/plane_detection.py` to add a heuristic for ceiling validation:
+I updated `src/plane_detection.py` to add a heuristic for ceiling validation:
 If the highest horizontal plane is not at least 2.0 meters above the floor, it is rejected as furniture.
 
 ```python
@@ -43,7 +45,7 @@ if len(horizontal_planes) >= 2:
     # Ensure it's actually a ceiling and not just a table/bed
     floor_y = classified['floor'].centroid[1]
     candidate_y = candidate_ceiling.centroid[1]
-    
+  
     if (candidate_y - floor_y) >= 2.0:
         classified['ceiling'] = candidate_ceiling
         classified['ceiling'].label = 'ceiling'

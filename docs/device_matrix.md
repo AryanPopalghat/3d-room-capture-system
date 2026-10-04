@@ -6,9 +6,9 @@ Which input tier runs on which hardware, and what accuracy each tier delivers.
 
 | Tier            | Hardware                                                        | Sensors Used                         | Expected Wall Accuracy | Expected Ceiling Height Accuracy |
 | --------------- | --------------------------------------------------------------- | ------------------------------------ | ---------------------- | -------------------------------- |
-| **LiDAR** | iPhone 12 Pro, 13 Pro, 14 Pro, 15 Pro, 16 Pro, iPad Pro (2020+) | LiDAR depth + RGB camera + IMU       | ±1-2 cm              | ±1.5 cm                         |
-| **Video** | Any iPhone 15 or newer                                          | RGB camera + IMU (no depth)          | ±3-5 cm              | ±3 cm                           |
-| **Photo** | Any iPhone 15 or newer                                          | RGB camera only (no depth, no poses) | ±5-10 cm             | ±8 cm (if ceiling visible)      |
+| **LiDAR** | iPhone 12 Pro, 13 Pro, 14 Pro, 15 Pro, 16 Pro, iPad Pro (2020+) | LiDAR depth + RGB camera + IMU       | ±1-2 cm               | ±1.5 cm                         |
+| **Video** | Any iPhone 15 or newer                                          | RGB camera + IMU (no depth)          | ±3-5 cm               | ±3 cm                           |
+| **Photo** | Any iPhone 15 or newer                                          | RGB camera only (no depth, no poses) | ±5-10 cm              | ±8 cm (if ceiling visible)      |
 
 ## LiDAR Tier (Implemented)
 
@@ -43,7 +43,7 @@ Which input tier runs on which hardware, and what accuracy each tier delivers.
 - Extract frames from video at ~2fps
 - Use monocular depth estimation (MiDAS/DPT) for per-frame depth
 - Use visual odometry (ORB-SLAM or DSO) for camera tracking
-- Same downstream pipeline (point cloud → planes → dimensions)
+- Same downstream pipeline (point cloud -> planes -> dimensions)
 
 **Accuracy expectations:**
 
