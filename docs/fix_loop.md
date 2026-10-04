@@ -30,7 +30,7 @@ The iPhone LiDAR coordinate system (ARKit) uses a Y-up convention where the came
 - `Y = -1.48m` corresponds to the floor (meaning the camera was held ~1.5m above the ground, which is normal chest height).
 - `Y = -0.73m` corresponds to a horizontal surface roughly 0.75m above the floor.
 
-**Root cause:** The `single_room` dataset did not scan the ceiling (the user only swept the walls and floor). The RANSAC algorithm found the *next largest horizontal plane* after the floor — which was a table or bed sitting at 0.75m height. Our naive logic simply assigned the highest horizontal plane as the ceiling, falsely classifying the furniture.
+**Root cause:** The `single_room` dataset did not scan the ceiling (the user only swept the walls and floor). The RANSAC algorithm found the *next largest horizontal plane* after the floor - which was a table or bed sitting at 0.75m height. Our naive logic simply assigned the highest horizontal plane as the ceiling, falsely classifying the furniture.
 
 ## The Fix
 

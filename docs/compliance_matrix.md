@@ -10,10 +10,10 @@ Maps each assignment requirement to its implementation status.
 | Ceiling height | `output/*/room_output.json` → `room.ceiling_height` | ✅ Built | From floor-ceiling plane distance |
 | Floor area | `output/*/room_output.json` → `room.floor_area` | ✅ Built | Convex hull of floor plane |
 | Openings (doors, windows) | `output/*/room_output.json` → `room.openings` | ✅ Built | Gap detection in wall planes |
-| Stitched multi-room plan | — | ❌ Not built | Only single-room data provided |
+| Stitched multi-room plan | - | ❌ Not built | Only single-room data provided |
 | Per-surface damage regions | `output/*/room_output.json` → `room.damage_regions` | ✅ Built | CV-based detection (stains, cracks) |
-| Concealed-damage flags | — | ❌ Not built | Requires rule engine + domain knowledge |
-| Scope line items | — | ❌ Not built | Requires damage-to-scope mapping |
+| Concealed-damage flags | - | ❌ Not built | Requires rule engine + domain knowledge |
+| Scope line items | - | ❌ Not built | Requires damage-to-scope mapping |
 | Confidence interval on every measurement | `output/*/room_output.json` | ✅ Built | 95% CI from RANSAC inlier spread |
 | One command per capture | `run_pipeline.py --input <path>` | ✅ Built | Single CLI command |
 | JSON to published schema | `output/*/room_output.json` | ✅ Built | Structured JSON with measurements |

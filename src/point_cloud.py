@@ -117,7 +117,7 @@ def build_point_cloud_from_scan(scan_data, frame_step=5, confidence_threshold=1,
         # Progress reporting
         if (i + 1) % 50 == 0 or (i + 1) == total:
             pts_so_far = sum(len(p) for p in all_points)
-            print(f"  Frame {i+1}/{total} — {pts_so_far:,} points accumulated")
+            print(f"  Frame {i+1}/{total} - {pts_so_far:,} points accumulated")
 
     if not all_points:
         print("  Error: no valid depth frames found!")
@@ -136,7 +136,7 @@ def build_point_cloud_from_scan(scan_data, frame_step=5, confidence_threshold=1,
     pcd = pcd.voxel_down_sample(voxel_size=voxel_size)
     print(f"  After voxel downsampling ({voxel_size*100:.0f}cm): {len(pcd.points):,} points")
 
-    # Remove statistical outliers — points that are far from their neighbors
+    # Remove statistical outliers - points that are far from their neighbors
     # are likely noise from reflective surfaces, glass, or sensor errors
     pcd = remove_outliers(pcd)
 
@@ -179,7 +179,7 @@ def estimate_point_cloud_bounds(pcd):
     Get the axis-aligned bounding box of the point cloud.
 
     Returns dict with min/max coordinates and room extent in each axis.
-    Useful for sanity checking — a typical room is 3-8m in XZ and 2.4-3m in Y.
+    Useful for sanity checking - a typical room is 3-8m in XZ and 2.4-3m in Y.
     """
     points = np.asarray(pcd.points)
     mins = points.min(axis=0)

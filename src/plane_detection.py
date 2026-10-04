@@ -12,7 +12,7 @@ We classify detected planes by their normal direction:
     - Vertical planes (normal pointing sideways) → walls
 
 This is robust to furniture, clutter, and noise because RANSAC
-naturally handles outliers — it only needs enough of the surface
+naturally handles outliers - it only needs enough of the surface
 to be visible to detect the underlying plane.
 """
 
@@ -149,7 +149,7 @@ def classify_planes(planes, vertical_threshold=20.0):
             wall_planes.append(plane)
             plane.label = 'wall'
         else:
-            # Angled surface — could be a ramp or sloped ceiling
+            # Angled surface - could be a ramp or sloped ceiling
             # Treat as wall for now
             wall_planes.append(plane)
             plane.label = 'wall'

@@ -21,7 +21,7 @@ Given a directory of iPhone LiDAR capture data (depth maps, camera poses, RGB vi
 
 1. **Builds a 3D point cloud** from depth maps + camera poses
 2. **Detects structural planes** (floor, ceiling, walls) using RANSAC
-3. **Extracts room dimensions** — ceiling height, floor area, wall lengths
+3. **Extracts room dimensions** - ceiling height, floor area, wall lengths
 4. **Detects openings** (doors, windows) from wall gaps
 5. **Identifies damage** (stains, cracks, discoloration) from RGB video
 6. **Renders a floor plan** with measurements
@@ -85,13 +85,13 @@ Data Ingestion → Point Cloud → Plane Detection → Geometry → Floor Plan
 
 ### Key Modules
 
-- **`src/data_loader.py`** — Parses camera intrinsics, odometry poses, depth/confidence maps
-- **`src/point_cloud.py`** — Fuses per-frame depth into a world-space 3D point cloud
-- **`src/plane_detection.py`** — RANSAC plane fitting with floor/ceiling/wall classification
-- **`src/geometry.py`** — Extracts ceiling height, floor area, wall lengths, openings
-- **`src/floor_plan.py`** — Renders dimensioned 2D floor plans
-- **`src/output_schema.py`** — JSON output with confidence intervals
-- **`src/damage_detector.py`** — RGB-based damage detection (stains, cracks)
+- **`src/data_loader.py`** - Parses camera intrinsics, odometry poses, depth/confidence maps
+- **`src/point_cloud.py`** - Fuses per-frame depth into a world-space 3D point cloud
+- **`src/plane_detection.py`** - RANSAC plane fitting with floor/ceiling/wall classification
+- **`src/geometry.py`** - Extracts ceiling height, floor area, wall lengths, openings
+- **`src/floor_plan.py`** - Renders dimensioned 2D floor plans
+- **`src/output_schema.py`** - JSON output with confidence intervals
+- **`src/damage_detector.py`** - RGB-based damage detection (stains, cracks)
 
 ## Requirements
 

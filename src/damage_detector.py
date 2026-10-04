@@ -13,7 +13,7 @@ Approach:
        - Dark spots / discoloration
     4. If depth data available, project 2D damage regions to 3D to get metric size
 
-This is a simplified baseline — a production system would use a
+This is a simplified baseline - a production system would use a
 vision-language model (like Gemini or GPT-4V) for more reliable
 damage classification.
 """
@@ -128,7 +128,7 @@ def detect_damage_in_frame(frame, frame_idx=None, min_area=500):
 
         x, y, cw, ch = cv2.boundingRect(contour)
 
-        # Cracks are typically elongated — check aspect ratio
+        # Cracks are typically elongated - check aspect ratio
         aspect_ratio = max(cw, ch) / (min(cw, ch) + 1)
         if aspect_ratio < 2.0:
             continue  # not elongated enough to be a crack
@@ -249,7 +249,7 @@ def _merge_overlapping_regions(regions, iou_threshold=0.3):
         for i in range(len(class_regions)):
             if used[i]:
                 continue
-            # This is the best detection — mark overlapping ones as used
+            # This is the best detection - mark overlapping ones as used
             for j in range(i + 1, len(class_regions)):
                 if used[j]:
                     continue

@@ -7,7 +7,7 @@ computes the actual room dimensions:
     - Floor area (convex hull of floor points projected to 2D)
     - Wall segments (intersection lines between adjacent walls)
     - Wall lengths
-    - Openings (gaps in walls — doors, windows)
+    - Openings (gaps in walls - doors, windows)
 
 All measurements include confidence intervals derived from the
 spread of inlier points around each fitted plane.
@@ -217,7 +217,7 @@ def detect_openings(wall_planes, floor_plane, ceiling_plane, gap_threshold=0.3):
     Doors appear as vertical gaps in the wall plane extending from floor level.
     Windows appear as gaps at mid-height.
 
-    This is a simplified approach — a full solution would use the RGB images
+    This is a simplified approach - a full solution would use the RGB images
     for visual detection and the depth data for geometric verification.
     """
     if not wall_planes or floor_plane is None:

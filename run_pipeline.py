@@ -89,7 +89,7 @@ def run_pipeline(input_dir, output_dir, frame_step=5, confidence_threshold=1,
     )
 
     if len(pcd.points) == 0:
-        print("ERROR: Point cloud is empty — check depth map format!")
+        print("ERROR: Point cloud is empty - check depth map format!")
         return None
 
     bounds = estimate_point_cloud_bounds(pcd)
@@ -101,7 +101,7 @@ def run_pipeline(input_dir, output_dir, frame_step=5, confidence_threshold=1,
     # Render a top-down debug view
     topdown_path = output_dir / "point_cloud_topdown.png"
     render_point_cloud_topdown(pcd, topdown_path,
-                                title=f"Point Cloud — {scan_data.scan_id}")
+                                title=f"Point Cloud - {scan_data.scan_id}")
 
     # ── Step 3: Detect planes ──
     print("\n[3/7] Detecting planes (RANSAC)...")
@@ -146,7 +146,7 @@ def run_pipeline(input_dir, output_dir, frame_step=5, confidence_threshold=1,
     # Render floor plan
     plan_path = output_dir / "floor_plan.png"
     render_floor_plan(room_dims, plan_path,
-                      title=f"Floor Plan — {scan_data.scan_id}")
+                      title=f"Floor Plan - {scan_data.scan_id}")
 
     # Print summary
     print_output_summary(output_json)
@@ -159,7 +159,7 @@ def run_pipeline(input_dir, output_dir, frame_step=5, confidence_threshold=1,
 
 def main():
     parser = argparse.ArgumentParser(
-        description="3D Room Capture Pipeline — reconstruct room geometry from iPhone LiDAR scans",
+        description="3D Room Capture Pipeline - reconstruct room geometry from iPhone LiDAR scans",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:

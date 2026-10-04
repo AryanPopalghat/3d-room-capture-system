@@ -89,7 +89,7 @@ def render_floor_plan(room_dims, output_path, title=None, figsize=(12, 10)):
         ci = room_dims.ceiling_height_ci
         info_lines.append(f'Ceiling Height: {room_dims.ceiling_height:.2f}m')
         if ci:
-            info_lines.append(f'  (95% CI: {ci[0]:.2f}m – {ci[1]:.2f}m)')
+            info_lines.append(f'  (95% CI: {ci[0]:.2f}m - {ci[1]:.2f}m)')
     if room_dims.floor_area is not None:
         info_lines.append(f'Floor Area: {room_dims.floor_area:.1f} m²')
     info_lines.append(f'Walls: {len(room_dims.wall_segments)}')
@@ -163,7 +163,7 @@ def render_point_cloud_topdown(pcd, output_path, title="Point Cloud Top-Down Vie
     """
     Render a top-down scatter plot of the raw point cloud.
 
-    Useful for debugging — shows the raw spatial distribution of points
+    Useful for debugging - shows the raw spatial distribution of points
     before any plane fitting or geometry extraction.
     """
     points = np.asarray(pcd.points)

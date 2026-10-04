@@ -21,19 +21,19 @@ Instructions for a non-engineer to capture a room using an iPhone with LiDAR.
 
 1. **Start recording** by tapping the red record button.
 2. **Stand in the center of the room** and slowly rotate 360° to capture the floor.
-3. **Walk slowly around the room perimeter**, keeping walls about 1–2 meters away. Move at a normal walking pace — don't rush.
-4. **Point the camera at each wall** as you pass it. Spend 2–3 seconds facing each wall directly.
+3. **Walk slowly around the room perimeter**, keeping walls about 1-2 meters away. Move at a normal walking pace - don't rush.
+4. **Point the camera at each wall** as you pass it. Spend 2-3 seconds facing each wall directly.
 5. **Scan the ceiling** by tilting the phone up ~45° and doing another slow rotation from the center.
-6. **Capture doorways and windows** — pause for 2 seconds when pointing at any opening.
+6. **Capture doorways and windows** - pause for 2 seconds when pointing at any opening.
 7. **Return to your starting position** to close the loop. This helps with drift correction.
 8. **Stop recording.**
 
 ### Timing
 
 - Small room (bathroom): ~30 seconds
-- Medium room (bedroom): ~45–60 seconds
+- Medium room (bedroom): ~45-60 seconds
 - Large room (living room): ~90 seconds
-- Full property (3+ rooms): ~3–5 minutes total
+- Full property (3+ rooms): ~3-5 minutes total
 
 ### What to Avoid
 

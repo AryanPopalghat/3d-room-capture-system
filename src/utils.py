@@ -15,7 +15,7 @@ def quaternion_to_rotation_matrix(qx, qy, qz, qw):
 
     Reference: https://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToMatrix/
     """
-    # Normalize to be safe — ARKit quats should already be unit length
+    # Normalize to be safe - ARKit quats should already be unit length
     # but floating point drift happens
     norm = np.sqrt(qx*qx + qy*qy + qz*qz + qw*qw)
     qx, qy, qz, qw = qx/norm, qy/norm, qz/norm, qw/norm

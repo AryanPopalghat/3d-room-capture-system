@@ -206,7 +206,7 @@ def load_scan(scan_dir):
     """
     Load all data from a scan directory into a ScanData object.
 
-    This doesn't load the actual depth/confidence images into memory —
+    This doesn't load the actual depth/confidence images into memory -
     those are loaded on-demand during point cloud construction to avoid
     running out of RAM on large scans.
 
