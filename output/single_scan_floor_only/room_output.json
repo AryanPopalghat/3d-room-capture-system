@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-05T01:04:34.364185",
+  "scan_id": "1a8384c3f6",
+  "input_tier": "lidar",
+  "room": {
+    "ceiling_height": null,
+    "floor_area": {
+      "value": 113.059,
+      "unit": "square_meters",
+      "uncertainty": 5.6529,
+      "confidence_interval_95": {
+        "lower": 101.979,
+        "upper": 124.138
+      }
+    },
+    "walls": [],
+    "openings": [],
+    "bounding_box": {
+      "min_x": -9.791723981679404,
+      "max_x": 3.597938319708679,
+      "min_y": -2.4257671826673968,
+      "max_y": 1.3252088132903452,
+      "min_z": -4.80903376122501,
+      "max_z": 10.33425474685065
+    },
+    "damage_regions": []
+  },
+  "processing": {
+    "input_frames": 5251,
+    "pipeline_version": "1.0.0",
+    "processing_time_seconds": 56.7
+  },
+  "confidence_notes": "All measurements include 95% confidence intervals derived from the spread of RANSAC inlier points. Ceiling height uncertainty combines floor and ceiling plane fitting errors. Floor area uses convex hull of floor plane inliers."
+}

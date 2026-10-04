@@ -26,7 +26,7 @@ data/
 Thumbs.db
 
 # Output artifacts (regenerable)
-output/
+# output/ - commented out to include benchmark results for reviewer
 
 # Scratch / working notes
 scratch/

@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-10-05T01:06:35.430663",
+  "scan_id": "c7d28f72c6",
+  "input_tier": "lidar",
+  "room": {
+    "ceiling_height": {
+      "value": 2.412,
+      "unit": "meters",
+      "uncertainty": 0.1036,
+      "confidence_interval_95": {
+        "lower": 2.208,
+        "upper": 2.615
+      }
+    },
+    "floor_area": {
+      "value": 102.935,
+      "unit": "square_meters",
+      "uncertainty": 5.1467,
+      "confidence_interval_95": {
+        "lower": 92.847,
+        "upper": 113.022
+      }
+    },
+    "walls": [
+      {
+        "wall_id": 1,
+        "length": {
+          "value": 14.481,
+          "unit": "meters"
+        },
+        "start_point": {
+          "x": 1.699,
+          "z": -4.646
+        },
+        "end_point": {
+          "x": -5.215,
+          "z": 8.078
+        },
+        "normal": {
+          "x": -0.879,
+          "z": -0.477
+        }
+      }
+    ],
+    "openings": [
+      {
+        "type": "door",
+        "width": {
+          "value": 0.302,
+          "unit": "meters"
+        },
+        "position": {
+          "x": 0.042,
+          "z": -1.597
+        }
+      },
+      {
+        "type": "door",
+        "width": {
+          "value": 0.402,
+          "unit": "meters"
+        },
+        "position": {
+          "x": -1.806,
+          "z": 1.804
+        }
+      },
+      {
+        "type": "door",
+        "width": {
+          "value": 0.905,
+          "unit": "meters"
+        },
+        "position": {
+          "x": -3.078,
+          "z": 4.146
+        }
+      },
+      {
+        "type": "door",
+        "width": {
+          "value": 0.302,
+          "unit": "meters"
+        },
+        "position": {
+          "x": -4.999,
+          "z": 7.681
+        }
+      }
+    ],
+    "bounding_box": {
+      "min_x": -5.323053192396324,
+      "max_x": 7.985962295600136,
+      "min_y": -2.4969903252962187,
+      "max_y": 2.9985301179911352,
+      "min_z": -4.637201567327516,
+      "max_z": 10.005543904737099
+    },
+    "damage_regions": []
+  },
+  "processing": {
+    "input_frames": 9745,
+    "pipeline_version": "1.0.0",
+    "processing_time_seconds": 106.2
+  },
+  "confidence_notes": "All measurements include 95% confidence intervals derived from the spread of RANSAC inlier points. Ceiling height uncertainty combines floor and ceiling plane fitting errors. Floor area uses convex hull of floor plane inliers."
+}
