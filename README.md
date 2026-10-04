@@ -71,7 +71,9 @@ output/<scan_id>/
 | `--voxel-size` | 0.02 | Downsampling grid size in meters |
 | `--max-depth` | 6.0 | Max depth reading to keep (meters) |
 | `--skip-damage` | false | Skip damage detection step |
-| `--fast` | false | Fast mode (step=10, voxel=3cm, no damage) |
+| `--fast` | false | Fast mode (step=10, voxel=3cm, skip damage) |
+
+*Note: Running with `--fast` explicitly skips the RGB video damage detection to save processing time. As a result, the `damage_regions` array in the output JSON will be intentionally empty.*
 
 ## Architecture
 
