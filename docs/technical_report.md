@@ -29,7 +29,7 @@ To identify structural or concealed damage that isn't visually obvious:
 ## 3. Scope Generation Architecture
 
 Translating geometry to an actionable construction scope:
-1. **Quantities:** Floor area (m²) → Flooring material quantity. Wall surface area (length × height - openings) → Paint quantity.
+1. **Quantities:** Floor area (m^2) -> Flooring material quantity. Wall surface area (length * height - openings) -> Paint quantity.
 2. **Line Items:** We map quantities to standardized cost codes (e.g., Xactimate).
 3. **Damage Overrides:** If the damage detector flags a wall section as "water damaged," the scope generation engine automatically inserts line items for "Tear out wet drywall" and "Mold remediation" for that specific wall segment.
 
@@ -45,3 +45,11 @@ We chose classical RANSAC over 3D deep learning (like PointNet) for plane extrac
 1. **Interpretability:** RANSAC provides mathematical guarantees. If it fails, we can see exactly which points were grouped.
 2. **Zero-shot generalizability:** RANSAC doesn't care if the room is a warehouse, a bathroom, or a mansion. Neural networks often fail on out-of-distribution architecture.
 3. **Compute Efficiency:** Runs on CPU in seconds; doesn't require GPUs for inference.
+
+## 6. Classical CV vs. Deep Learning for Damage Detection
+
+For visual damage detection (stains, cracks), we implemented a baseline using Classical Computer Vision (OpenCV color space analysis and Canny edge detection) rather than a Deep Learning model like YOLO or a Vision-Language Model (VLM).
+
+1. **Trade-offs:** Classical CV is deterministic, extremely fast, and requires no heavy weights or GPU dependencies, ensuring the pipeline is reproducible on any reviewer's laptop.
+2. **Limitations:** The primary limitation is an increase in **false positives**. A shadow cast by a lamp may be tagged as water damage, or a picture frame edge as a crack. 
+3. **Production Path:** We built the module boundaries and schemas to prove the architectural flow. In a production environment, this `src/damage_detector.py` module would simply be swapped out for a fine-tuned YOLO model or VLM API call to drastically reduce false positives without altering the rest of the pipeline.
